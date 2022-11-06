@@ -26,13 +26,21 @@ class QuizPage extends StatefulWidget {
   State<QuizPage> createState() => _QuizPageState();
 }
 
-//TODO 2: Create a List of Widgets "scoreKeeper" here to act as the children list for your Score Keeper Row
+List<Widget> scoreKeeper = [];
 
-//TODO 6: Create a List of Strings "questions" using the questions at section A in the README file
+List<String> questions = [
+  'You can lead a cow down stairs but not up stairs.',
+  'Approximately one quarter of human bones are in the feet.',
+  'A slug\'s blood is green.',
+];
 
-//TODO 8: Create a variable "questionNumber" to be used as a counter for the questions
+List<bool> questionsAnswer = [
+  false,
+  true,
+  true,
+];
 
-//TODO 10: Create a List of bools "questionsAnswers" as answers for the questions list
+int questionNumber = 0;
 
 class _QuizPageState extends State<QuizPage> {
   @override
@@ -47,8 +55,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                //TODO 7: use the first value of questions from the question list for the text here
-                'This is where the question text will go.',
+                questions[questionNumber],
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -58,7 +65,6 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-        //TODO 9: increase questionNumber by one wherever "TRUE" or "FALSE" buttons is pressed
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
@@ -75,9 +81,19 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //TODO 3: When pressed, Add a green "true" icon to the score keeper list
                 //The user picked true.
-                //TODO 11: compare the question answer to the selected answer (true) and add icons to the score keeper list accordingly
+                setState(() {
+                  if (questionsAnswer[questionNumber] == true) {
+                    scoreKeeper.add(Icon(Icons.check, color: Colors.green));
+                  } else {
+                    scoreKeeper.add(Icon(Icons.close, color: Colors.red));
+                  }
+                  if (questionNumber < 2) {
+                    questionNumber++;
+                  } else {
+                    questionNumber = 0;
+                  }
+                });
               },
             ),
           ),
@@ -98,20 +114,27 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //TODO 4: When pressed, Add a red "close" icon to the score keeper list
                 //The user picked false.
-                //TODO 12: compare the question answer to the selected answer (false) and add icons to the score keeper list accordingly
+                setState(() {
+                  if (questionsAnswer[questionNumber] == false) {
+                    scoreKeeper.add(Icon(Icons.check, color: Colors.green));
+                  } else {
+                    scoreKeeper.add(Icon(Icons.close, color: Colors.red));
+                  }
+                  if (questionNumber < 2) {
+                    questionNumber++;
+                  } else {
+                    questionNumber = 0;
+                  }
+                });
               },
             ),
           ),
         ),
-        //TODO 1: Add a Row here as your score keeper
+        Row(
+          children: scoreKeeper,
+        ),
       ],
     );
   }
 }
-//TODO 5: Commit and push your project with the note : "initiaing the scorekeeper"
-
-//TODO 13: Commit and push your project with the note : "Starting Challeng A"
-//TODO 14: CHALLENGE A: print a msg when the questions list is finished without crashing the app
-//TODO 15: Commit and push your project with the note : "Finishing Challeng A"
