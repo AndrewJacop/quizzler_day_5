@@ -1,16 +1,16 @@
 ![App Brewery Banner](https://github.com/londonappbrewery/Images/blob/master/AppBreweryBanner.png)
 
-
 # Quizzler ❓
 
 ## Our Goal
 
-In this tutorial we will be reviewing Stateful and Stateless Widgets as well as learning about the fundamental building blocks of Object Oriented Programming (OOP) - Classes and Objects. 
-
+In this tutorial we will be reviewing Stateful and Stateless Widgets as well as learning about the
+fundamental building blocks of Object Oriented Programming (OOP) - Classes and Objects.
 
 ## What you will create
 
-We’re going to make a quiz app that tests your general knowledge. As one of the most popular types of apps on the app stores, you can create your own quiz for other people to enjoy!
+We’re going to make a quiz app that tests your general knowledge. As one of the most popular types
+of apps on the app stores, you can create your own quiz for other people to enjoy!
 
 ![Finished App](https://github.com/londonappbrewery/Images/blob/master/quizzler-demo.gif)
 
@@ -24,7 +24,16 @@ We’re going to make a quiz app that tests your general knowledge. As one of th
 - How to use Dart lists.
 - The difference between var, const and final.
 
-## Code Snippet for Project
+## Code Snippet for Project (Section A)
+
+```
+question1: 'You can lead a cow down stairs but not up stairs.', false,
+question2: 'Approximately one quarter of human bones are in the feet.', true,
+question3: 'A slug\'s blood is green.', true,
+
+```
+
+## Code Snippet for Project (Section B)
 
 ```
 Question('Some cats are actually allergic to humans', true),
@@ -55,7 +64,6 @@ Question('Some cats are actually allergic to humans', true),
 
 ```
 
-
->This is a companion project to The App Brewery's Complete Flutter Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
+> This is a companion project to The App Brewery's Complete Flutter Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
 
 ![End Banner](https://github.com/londonappbrewery/Images/blob/master/readme-end-banner.png)
