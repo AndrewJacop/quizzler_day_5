@@ -28,6 +28,7 @@ class QuizPage extends StatefulWidget {
 
 List<Widget> scoreKeeper = [];
 
+//TODO 4: Comment out or Delete the following lines of code
 List<String> questions = [
   'You can lead a cow down stairs but not up stairs.',
   'Approximately one quarter of human bones are in the feet.',
@@ -39,6 +40,7 @@ List<bool> questionsAnswer = [
   true,
   true,
 ];
+//TODO 5: create a list of QUESTIONs "questionBank" using Section B form the README file
 
 int questionNumber = 0;
 
@@ -55,6 +57,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
+                //TODO 6: update the text to use the Question "questionText" property
                 questions[questionNumber],
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -83,11 +86,13 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked true.
                 setState(() {
+                  //TODO 7: update the answer to use the Question "questionAnswer" property
                   if (questionsAnswer[questionNumber] == true) {
                     scoreKeeper.add(Icon(Icons.check, color: Colors.green));
                   } else {
                     scoreKeeper.add(Icon(Icons.close, color: Colors.red));
                   }
+                  //TODO 8: update the question number to use the length of the questionBank List
                   if (questionNumber < 2) {
                     questionNumber++;
                   } else {
@@ -116,11 +121,13 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked false.
                 setState(() {
+                  //TODO 9: update the answer to use the Question "questionAnswer" property
                   if (questionsAnswer[questionNumber] == false) {
                     scoreKeeper.add(Icon(Icons.check, color: Colors.green));
                   } else {
                     scoreKeeper.add(Icon(Icons.close, color: Colors.red));
                   }
+                  //TODO 10: update the question number to use the length of the questionBank List
                   if (questionNumber < 2) {
                     questionNumber++;
                   } else {
@@ -138,3 +145,5 @@ class _QuizPageState extends State<QuizPage> {
     );
   }
 }
+
+//TODO 11: commit and push your project with note "creating question class and question bank"
